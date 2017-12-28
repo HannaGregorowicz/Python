@@ -1,0 +1,18 @@
+import math
+from math import sqrt
+
+a=eval(input("Podaj współczynnik a równania kwadratowego: "))
+b=eval(input("Podaj współczynnik b równania kwadratowego: "))
+c=eval(input("Podaj współczynnik c równania kwadratowego: "))
+
+delta=(b*b)-(4*a*c)
+
+if delta>0:
+    x1=((-1*b)-sqrt(delta))/(2*a)
+    x2=((-1*b)+sqrt(delta))/(2*a)
+    print("Równanie ma dwa pierwiastki: ", x1, " oraz ", x2)
+if delta==0:
+    x1=(-1*b)/(2*a)
+    print("Równanie ma jeden pierwiastek: ", x1)
+if delta<0:
+    print("To równanie nie ma pierwiastków.")

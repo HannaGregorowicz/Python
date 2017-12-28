@@ -1,0 +1,8 @@
+even = range(2,100,2)
+lista = list(even)
+a,b,c,*d = lista
+a,b,c,*_ = lista
+start, *calosc, end = lista
+
+nowa_lista=list(calosc)
+print(nowa_lista)

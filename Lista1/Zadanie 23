@@ -1,0 +1,38 @@
+def funkcja(x,y):
+
+    if x>y:
+        print("Mniejsza liczba to ", y)
+        return y
+    if x<y:
+        print("Mniejsza liczba to ", x)
+        return x
+    else:
+        print("Podane liczby są równe.")
+        return x
+
+def funkcja2():
+    r = [int(r) for r in input("Podaj elementy listy: ").split()]
+    s = len(r)
+    liczba = r[s-1]
+    for i in range(s):
+        liczba = funkcja_pomocnicza(r[i],liczba)
+
+    print("Najmniejsza liczba to ",liczba)
+
+def funkcja_pomocnicza(x,y):    #funkcja pomocnicza jest po to żeby nie musieć używać funkcji 1,
+    if x>y:                     #ponieważ funkcja 1 niepotrzebnie wyświetla napisy :D
+        return y                #To w sumie prawie to samo co pierwsza funkcja
+    if x<y:
+        return x
+    else:
+        return x
+
+poczatek = int(input("Którą funkcję chcesz odpalić, 1 czy 2? "))
+if (poczatek == 2):
+    funkcja2()
+elif (poczatek == 1):
+    x = eval(input("Podaj pierwszą liczbę: "))
+    y = eval(input("Podaj drugą liczbę: "))
+    funkcja(x,y)
+else:
+    print("Źle wpisałeś :-(")

@@ -1,0 +1,10 @@
+lista = (input("Podaj liczby oddzielone spacjami: "))
+lista = lista.split(sep=" ")
+#print(lista)
+slownik = {}
+for a in lista:
+    a=int(a)
+    slownik[a] = a*a
+
+for b in slownik.keys():
+    print(b, "->", slownik[b])

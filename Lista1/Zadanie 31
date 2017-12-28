@@ -1,0 +1,11 @@
+import math
+from math import sqrt
+
+x1=float(input("Podaj współrzędną x pierwszego punktu: "))
+y1=float(input("Podaj współrzędną y pierwszego punktu: "))
+x2=float(input("Podaj współrzędną x drugiego punktu: "))
+y2=float(input("Podaj współrzędną y drugiego punktu: "))
+
+odleglosc=sqrt(((x2-x1)**2)+((y2-y1)**2))
+
+print("Odległość między punktami wynosi: ", odleglosc)

@@ -1,0 +1,23 @@
+x=int(input("Podaj liczbę: "))
+
+liczby_pierwsze=[]
+i=0
+b=2
+c=0
+a=2
+dlugosc = 10000
+for a in range (1,dlugosc,1):
+
+    for b in range (1,dlugosc,1):
+        if a%b==0:
+            c+=1
+    if c==2:
+        liczby_pierwsze.append(c)
+
+print(liczby_pierwsze)
+while x/x!=1:
+    if x%liczby_pierwsze[i]==0:
+        x/=liczby_pierwsze[i]
+        print(liczby_pierwsze[i])
+    else:
+        i+=1

@@ -1,0 +1,33 @@
+import string
+import random
+import itertools
+from itertools import permutations
+
+def silnia(a):
+    if a>=1:
+        return a*silnia(a-1)
+    else:
+        return 1
+
+def funkcja():
+    liczby = list(string.digits)
+
+    zdanie=input("Podaj ciąg znaków: ")
+    zdanie=(''.join(zdanie.split()))
+
+    cyfry=''
+
+    for litera in zdanie:
+        if litera in liczby:
+            cyfry += litera
+        else:
+            continue
+
+    cyfry=list(sorted(cyfry))
+
+    permutacje = list(permutations(cyfry))
+    print(permutacje, end="\n")
+
+
+funkcja()
+

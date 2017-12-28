@@ -1,0 +1,17 @@
+import datetime
+from datetime import date
+
+dzien1=int(input("Podaj dzień pierwszej daty: "))
+miesiac1=int(input("Podaj miesiąc pierwszej daty: "))
+rok1=int(input("Podaj rok pierwszej daty: "))
+
+dzien2=int(input("Podaj dzień drugiej daty: "))
+miesiac2=int(input("Podaj miesiąc drugiej daty: "))
+rok2=int(input("Podaj rok drugiej daty: "))
+
+data1=date(rok1, miesiac1, dzien1)
+data2=date(rok2, miesiac2, dzien2)
+
+liczba_dni=abs(data1-data2)
+
+print("Liczba dni między datami to", liczba_dni.days, "dni")

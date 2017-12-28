@@ -1,0 +1,34 @@
+klucz = {"a": "y", "e": "i", "i": "o", "o": "a", "y": "e"}
+deklucz = {v: k for k, v in klucz.items()}
+
+a=0
+
+def szyfrowanie(tekst):
+    """Szyfruje tekst według określonego klucza."""
+    for a in range(len(tekst)):
+        tekst=list(tekst)
+        if tekst[a] in klucz.keys():
+            tekst[a]=klucz.get(tekst[a])
+        else:
+            continue
+    print(''.join(tekst))
+
+def deszyfrowanie(tekst):
+    """Rozszyfrowuje tekst według określonego klucza"""
+    for a in range(len(tekst)):
+        tekst = list(tekst)
+        if tekst[a] in deklucz.keys():
+            tekst[a]=deklucz.get(tekst[a])
+        else:
+            continue
+    print(''.join(tekst))
+
+print("Chcesz zaszyfrować tekst (1) czy rozszyfrować go? (2)")
+x=int(input("Wpisz 1 lub 2: "))
+
+if x==1:
+    tekst = input("Podaj tekst, który chcesz zaszyfrować: ")
+    szyfrowanie(tekst)
+if x==2:
+    tekst = input("Podaj tekst, który chcesz rozszyfrować: ")
+    deszyfrowanie(tekst)

@@ -1,0 +1,11 @@
+dziennik = {"Matematyka": 4, "Fizyka": 5, "Informatyka": 3}
+dziennik["Chemia"] = 3
+dziennik["Biologia"] = 5
+
+for a in dziennik.keys():
+    print(a, "-", dziennik[a])
+
+oceny = dziennik.values()
+oceny = sum(oceny)
+srednia = oceny/len(dziennik.values())
+print("Średnia ocen to", srednia)

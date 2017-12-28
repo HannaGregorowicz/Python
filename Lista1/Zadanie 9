@@ -1,0 +1,11 @@
+x=(0,1,2,3,4,"pięć","sześć","siedem","osiem","dziewięć")
+print(x[0:3])
+print(x[7:10])
+print(x[1:10:2])
+print(len(x))
+print(len(x[8]))
+
+print(x[:5] + (5,6) + x[-3:])   # ta linijka drukuje nową krotkę złożoną z wybranych elementów x oraz (5,6)
+print(x[:5], (5,6), x[-3:])     # ta linijka drukuje trzy osobne krotki
+
+# x.append(" ") nie zadziała, ponieważ nie da się zmienić zawartości raz stworzonej krotki

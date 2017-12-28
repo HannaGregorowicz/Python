@@ -1,0 +1,21 @@
+liczba = int(input("Podaj liczbę: "))
+slownik = {}
+wartosc = []
+lista = list(range(1,liczba+1))
+print(lista)
+
+
+for a in (lista):
+    i=1
+    while float(i)<=float(liczba):
+        if a % i == 0:
+            wartosc.append(i)
+        i+=1
+        slownik[a] = wartosc
+    print(a, wartosc)
+    wartosc = []
+
+
+
+
+

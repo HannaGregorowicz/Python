@@ -1,0 +1,28 @@
+# lista zakupów
+grocery = ['jajka', 'mleko', 'chleb', 'maslo', 'piwo']
+# ilość sztuk
+n_items = []
+# zakazane produkty
+prohibited = ['wódka', 'piwo', 'wino']
+ty = 0
+# w pętli pytamy użytkownika, ile sztuk danego produktu chce kupić
+for product in grocery:
+
+    print ("Produkt ", product, ": sztuk = ")
+    if (product in prohibited):
+        n_items.append(0)
+
+
+    else:
+
+        x =int(input())
+        n_items.append(x)
+
+
+# drukujemy listę zakupów
+
+print("{:-^50}".format("Lista zakupów"), end="\n\n")
+
+for c in range(len(grocery)):
+    print(c+1,".", grocery[c],":", n_items[c], "szt.")
+

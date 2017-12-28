@@ -1,0 +1,10 @@
+x=range(100)
+y=list(x)
+z=[x*x for x in y]
+print(z)
+
+#a= (list(enumerate(z, start=0))) #enumerate - numeruje, start - od jakiej liczby
+#print(a)
+
+for c, value in enumerate(z,0):
+    print(c, "->", value)

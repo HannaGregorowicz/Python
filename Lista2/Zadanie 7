@@ -1,0 +1,12 @@
+def slowniki(slownik,slownik2):
+    if slownik.keys()==slownik2.keys():
+        print("Uwaga na powtarzające się klucze")
+    slownik3=slownik.copy()
+    slownik3.update(slownik2)
+    print(slownik3)
+
+
+slowniki({"jeden":1,"dwa":2,"trzy":3},{"jeden":4,"dwa":5,"trzy":6})
+
+slowniki({"jeden":1,"dwa":2,"trzy":3},{"cztery":4,"pięć":5,"sześć":6})
+

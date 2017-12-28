@@ -1,0 +1,15 @@
+def kasowanie(slownik):
+    wartosci = []
+    nowy_slownik = {}
+    for a in slownik.keys():
+        if slownik[a] not in wartosci:
+            nowy_slownik[a] = slownik[a]
+            wartosci.append(slownik[a])
+        else:
+            continue
+    for x in nowy_slownik.keys():
+        print(x, "->", nowy_slownik[x])
+
+
+x={"kot": 5, "ania":3, "ala":5, "cos":4, "haha":4}
+kasowanie(x)

@@ -1,0 +1,12 @@
+import turtle
+
+length = eval(input("Podaj długość boku: "))
+n_sides = 6 #6 boków
+
+turtle.speed(20)
+
+for i in range(n_sides):
+    turtle.forward(length)
+    turtle.right(60) #kąt 60 stopni
+
+turtle.mainloop() # nie zamykaj okna po narysowaniu

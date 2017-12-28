@@ -1,0 +1,14 @@
+x = ["pies", "kot", "ala", "aha"]
+
+
+def funkcja(lista):
+    wynik = 0
+    for element in lista:
+        if element[0]==element[-1]:
+            wynik+=1
+        else:
+            continue
+    return wynik
+
+
+print(funkcja(x))

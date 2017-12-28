@@ -1,0 +1,18 @@
+
+argumenty=input("Wpisz swoje wartości oddzielone spacjami: ").split()
+
+def funkcja1(argumenty):
+    for a,b in enumerate (argumenty,1):
+        print(a, "->", b)
+
+funkcja1(argumenty)
+
+klucze = input("Wpisz nazwy kluczy oddzielone spacjami: ").split()
+wartosci = input("Wpisz tyle samo wartości oddzielonych spacjami: ").split()
+def funkcja2(klucze, wartosci):
+    i=0
+    slownik = dict(zip(klucze, wartosci))
+    for i in range(len(slownik)):
+        print(klucze[i], "->", wartosci[i])
+
+funkcja2(klucze,wartosci)

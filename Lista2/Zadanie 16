@@ -1,0 +1,14 @@
+import ciag_arytmetyczny
+from ciag_arytmetyczny import wyraz, suma
+
+a1 = float(input("Podaj pierwszy wyraz ciągu: "))
+r = float(input("Podaj różnicę ciągu: "))
+n = int(input("Podaj, który wyraz ciągu chcesz policzyć: "))
+
+an = wyraz(a1,n,r)
+
+print("Twój wyraz to:",an)
+
+wynik = suma(a1, an, n)
+
+print("Twoja suma to:", wynik)

@@ -1,0 +1,53 @@
+import random
+
+print ("--------------------")
+print ("|      NAUKA       |")
+print ("|    MATEMATYKI    |")
+print ("--------------------")
+print ("1. Dodawanie \n2. Odejmowanie \n3. Mnożenie \n4. Dzielenie \n5. Wyjście")
+wybor = 1
+
+x = range(11)
+zakres = list(x)
+zakres.remove(0)
+
+def losuj():
+    a = random.choice(zakres)
+    b = random.choice(zakres)
+    return a,b
+
+
+while (wybor!=5):
+    wybor = int(input("Wybierz, co chcesz zrobić: "))
+    if wybor == 1:
+        a,b = losuj()
+        print(a, "+", b, "= ?")
+        wynik = int(input("Podaj wynik: "))
+        if wynik == (a+b):
+            print("Wynik poprawny.")
+        else:
+            print("Wynik niepoprawny.")
+    if wybor == 2:
+        a,b = losuj()
+        print(a, "-", b, "= ?")
+        wynik = int(input("Podaj wynik: "))
+        if wynik == (a - b):
+            print("Wynik poprawny.")
+        else:
+            print("Wynik niepoprawny.")
+    if wybor == 3:
+        a, b = losuj()
+        print(a, "*", b, "= ?")
+        wynik = int(input("Podaj wynik: "))
+        if wynik == (a * b):
+            print("Wynik poprawny.")
+        else:
+            print("Wynik niepoprawny.")
+    if wybor == 4:
+        a, b = losuj()
+        print(a, "/", b, "= ?")
+        wynik = float(input("Podaj wynik (jeśli nie wychodzi równy, to podaj zaokrąglenie do mniejszej liczby całkowitej): "))
+        if wynik == (int(a / b)):
+            print("Wynik poprawny.")
+        else:
+            print("Wynik niepoprawny.")

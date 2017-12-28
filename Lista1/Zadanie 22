@@ -1,0 +1,20 @@
+import math
+
+slownik = {"jajka" : 4, "chleb":3, "mleko":3, "woda":1, "czekolada":5, "kurczak":10}
+
+slownik["ciastka"] = 5 #średnia po dodaniu tego wzrosła o 0,09
+
+for produkt, cena in slownik.items():
+    print(produkt, cena, "zl")
+
+def srednia():
+    x=slownik.values()
+    y=math.fsum(x)
+    z=y/len(slownik)
+    print ("Średnia cena produktu to: ", z)
+
+srednia()
+
+del slownik["ciastka"]
+
+srednia()

@@ -1,0 +1,9 @@
+x=0
+y=1
+
+n=eval(input("Podaj liczbę wyrazów ciągu Fibonacciego: "))
+
+for a in range(n):
+    print(x)
+    y +=x
+    x = y -x

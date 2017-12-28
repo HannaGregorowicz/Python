@@ -1,0 +1,24 @@
+slubowanie = """
+wstępując do wspólnoty akademickiej Uniwersytetu Wrocławskiego, ślubuję uroczyście:
+- zdobywać wiedzę i umiejętności,
+- postępować zgodnie z prawem, tradycją i dobrymi obyczajami akademickimi,
+- dbać o dobre imię Uniwersytetu Wrocławskiego i godność studenta.
+"""
+
+slubowanie=(slubowanie[:2].upper()+slubowanie[2:])
+
+print(slubowanie.count("i"))    #"i" jako litera
+print(slubowanie.count(" i "))  #"i" jako spójnik
+
+if "uniwersytet" in slubowanie:
+    print("true")
+else:
+    print("false")
+
+
+print(slubowanie.split(sep=" ", maxsplit=30))   #tworzy nowe elementy listy zawsze, gdy zauważy spację
+print(slubowanie.split(sep="\n", maxsplit=4))   #tworzy nowe elementy listy zawsze, gdy zauważy \n
+
+print(slubowanie)
+slubowanie
+print(slubowanie[0])

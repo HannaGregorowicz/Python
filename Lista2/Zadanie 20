@@ -1,0 +1,45 @@
+def przelicz():
+    print("Czy chcesz konwertować z systemu dziesiętnego na binarny czy na odwrót?")
+    try:
+        cos = int(input("1 - dziesiętny -> binarny; 2 - binarny -> dziesiętny "))
+        if cos==1:
+            print("Wybrałeś konwersję z dziesiętnego na binarny.")
+            liczba = int(input("Podaj liczbę, którą chcesz zamienić: "))
+            wynik = []
+            a=[]
+            while (liczba != 0):
+                x = liczba%2
+                wynik.append(x)
+                liczba=int(liczba/2)
+
+            for i in reversed(wynik):
+                a.append(str(i))
+            print("Twoja liczba w systemie dziesiętnym to", "".join(a))
+
+
+
+        if cos==2:
+            print("Wybrałeś konwersję z binarnego na dziesiętny.")
+            liczba = (input("Podaj liczbę, którą chcesz zamienić: "))
+            liczba = list(liczba)
+
+            j = (len(liczba))
+            wynik=0
+            x = 0
+            for b in range(j):
+                if int(liczba[b]) == 1 or int(liczba[b]) == 0:
+                    wynik += (int(liczba[b]))*(2**(j-1))
+                    j-=1
+                else:
+                    wynik = "nie liczba w systemie binarnym!"
+                    break
+            print("Twoja liczba to", wynik)
+
+        if cos!=1 and cos!=2:
+            print("Źle wpisałeś!")
+
+    except ValueError:
+        print("Źle wpisałeś!")
+
+
+przelicz()

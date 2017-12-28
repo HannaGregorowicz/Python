@@ -1,0 +1,34 @@
+import math
+from math import cos
+from math import sin
+from math import pi
+
+v0=int(input("Podaj prędkość początkową (m/s): "))
+alfa=int(input("Podaj kąt: "))
+g=9.81
+
+v0x=v0*cos(alfa*pi/180)
+v0y=v0*sin(alfa*pi/180)
+
+t=(2*v0*sin(alfa*pi/180))/g                        #t to czas
+
+h_max = ((v0**2)*((sin(alfa*pi/180))**2))/(2*g)    #h_max to maksymalna wysokość
+
+x = v0*t*cos(alfa*pi/180)                          #x to zasięg
+
+print("Czas lotu jest równy", t)
+print("Maksymalna wysokość jest równa", h_max)
+print("Zasięg jest równy", x)
+
+zmienna=int(t)
+
+for czas in range(zmienna):
+    czas=int(input("Podaj czas: "))
+    if(czas==0):
+        break
+    if(czas>t):
+        print("Ciało po tym czasie jest już na ziemi.")
+    else:
+        polozenie_x=v0*czas*cos(alfa*pi/180)
+        polozenie_y=v0*czas*sin(alfa*pi/180)-((g*(czas**2))/2)
+        print("Położenie: x =", polozenie_x,"y =",polozenie_y)

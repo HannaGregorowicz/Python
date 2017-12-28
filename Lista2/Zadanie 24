@@ -1,0 +1,33 @@
+import string
+from string import ascii_letters
+import textwrap
+
+klucz = input("Podaj klucz: ")
+
+def sprawdzenie(a):
+    if (len(a)==16):
+        for i in a:
+            if i in ascii_letters:
+                print("Źle wpisałeś!")
+    else:
+        print("Źle wpisałeś!")
+
+def sprawdzenie2(a):
+    z=0
+    for i in a:
+        x = sum(map(int, str(i)))
+        if (x%3==0):
+            z+=1
+        else:
+            z+=2
+    if (z==4):
+        print("Kod jest poprawny.")
+    if (z==8):
+        print("Kod jest niepoprawny.")
+
+sprawdzenie(klucz)
+
+lista = textwrap.wrap(klucz, 4)
+print("-".join(lista))
+
+sprawdzenie2(lista)

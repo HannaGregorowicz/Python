@@ -1,0 +1,23 @@
+import string
+
+liczby=tuple(string.digits)
+litery=list(string.ascii_letters)
+litery=tuple(litery[:26])
+litery_i_liczby=tuple(liczby+litery)
+
+ciag_znakow=input("Podaj ciąg znaków: ")
+ciag_znakow=ciag_znakow.lower()
+ciag_znakow=(''.join(ciag_znakow.split()))
+
+
+litery_juz_obecne=''
+for litera in ciag_znakow:
+    if litera in litery_i_liczby and litera not in litery_juz_obecne:
+        litery_juz_obecne += litera
+    else:
+        continue
+
+if len(litery_juz_obecne) == len(ciag_znakow):
+    print("Ten ciąg znaków zawiera tylko unikatowe znaki.")
+else:
+    print("Ten ciąg znaków nie zawiera tylko unikatowych znaków.")

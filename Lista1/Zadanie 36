@@ -1,0 +1,27 @@
+import string
+
+zdanie=input("Podaj zdanie: ")
+
+zdanie=(zdanie.lower())
+zdanie=(''.join(zdanie.split()))
+
+alfabet = list(string.ascii_letters)
+usun=26
+alfabet=alfabet[:usun]
+
+
+z=0     #to jest liczba liter w zdaniu
+
+litery_juz_obecne=""
+
+for litera in zdanie:
+    if (litera in alfabet and litera not in litery_juz_obecne):
+        z+=1
+        litery_juz_obecne+=litera
+    else:
+        continue
+
+if (z)==26:
+    print("To zdanie to pangram.")
+else:
+    print("To zdanie to nie pangram.")

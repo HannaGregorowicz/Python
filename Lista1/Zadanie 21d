@@ -1,0 +1,17 @@
+import turtle
+
+length = eval(input("Podaj długość boku: "))
+n_sides = eval(input("Podaj liczbę boków: "))
+N = eval(input("Podaj ile razy rysować wielokąt: "))
+
+turtle.speed(20)
+
+x=360/N
+for x in range(N):
+    for i in range(n_sides):
+        turtle.forward(length)
+        turtle.right(360/n_sides)
+
+    turtle.right(360/N)
+
+turtle.mainloop() # nie zamykaj okna po narysowaniu

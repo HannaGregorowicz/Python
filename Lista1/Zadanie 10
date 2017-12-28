@@ -1,0 +1,17 @@
+x=["Kasia", "Basia", "Marek", "Darek"]
+x.append("Józek")
+y=["Ania", "Basia"]
+x.extend(y)
+x=(sorted(x))
+print(x)
+print(x[3])
+print(x[:2])    #pierwsze 2 elementy
+print(x[5:])    #od piątego do końca
+
+x.remove('Basia')
+x.remove('Basia')
+print(x)
+
+print(len(x))
+krotka = tuple(x)
+print (krotka)

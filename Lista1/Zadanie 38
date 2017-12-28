@@ -1,0 +1,18 @@
+tekst=input("Podaj jakieś słowo lub zdanie: ")
+
+i=0
+
+def palindrom(tekst):
+    x=0
+    for i in range(int(len(tekst)/2)):
+        if tekst[i] == " " or tekst[i] == tekst[len(tekst)-i-1] or tekst[len(tekst)-i-1] == " ":
+            x+=1
+            continue
+        else:
+            continue
+    if x==int(len(tekst)/2):
+        print("To wyrażenie jest palindromem.")
+    else:
+        print("To wyrażenie nie jest palindromem.")
+
+palindrom(tekst)

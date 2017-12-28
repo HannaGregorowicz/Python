@@ -1,0 +1,10 @@
+import random
+
+odpowiedzi = ("Może", "Tak", "Nie", "Oczywiście", "Nie ma mowy", "Dlaczego by nie?", "Chyba śnisz", "Nie wiem", "Chyba tak", "Na pewno tak", "Na pewno nie",
+              "Chyba nie", "Całkiem prawdopodobne", "Raczej nie", "Raczej tak", "Mało prawdopodobne", "Możliwe", "Czemu nie?", "Wątpię", "Z pewnością")
+
+a=0
+while a!= "nie":
+    input("Zadaj pytanie typu tak/nie: ")
+    print(random.choice(odpowiedzi))
+    a = input("Czy chcesz zadać kolejne pytanie?")

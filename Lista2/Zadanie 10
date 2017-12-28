@@ -1,0 +1,19 @@
+produkt = "a"
+lista_zakupow = {}
+while produkt!="":
+    produkt = input("Podaj nazwę produktu: ")
+    if produkt != "":
+        cena = int(input("Podaj cenę: "))
+        lista_zakupow[produkt] = cena
+    else:
+        break
+
+print("\n----LISTA ZAKUPÓW----")
+for a in lista_zakupow.keys():
+    print(a, "-", lista_zakupow[a], "zł")
+
+ceny=list(lista_zakupow.values())
+koszt = sum(ceny)
+print("Całkowity koszt zakupów to", koszt, "zł.")
+najdrozszy = max(ceny)
+print("Najdroższy produkt kosztuje", najdrozszy, "zł.")

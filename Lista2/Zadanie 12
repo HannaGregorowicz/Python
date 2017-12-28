@@ -1,0 +1,5 @@
+dziennik = {"Matematyka 1": 4, "Fizyka 1": 5, "Informatyka 1": 3}
+
+for a in dziennik.keys():
+    a = "_".join(a.split())
+    print(a)

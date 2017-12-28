@@ -1,0 +1,21 @@
+def funkcja(a, b):
+    for element in a:
+        if element in b:
+            return "true"
+            break
+        else:
+            continue
+
+lista1 = []
+x=int(input("Podaj liczbę elementów pierwszej listy: "))
+for a in range(x):
+    b=input("Podaj element listy: ")
+    lista1.append(b)
+
+lista2 = []
+y=int(input("Podaj liczbę elementów drugiej listy: "))
+for a in range(y):
+    b=input("Podaj element listy: ")
+    lista2.append(b)
+
+print(funkcja(lista1, lista2))

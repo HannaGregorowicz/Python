@@ -1,0 +1,12 @@
+import rgb_i_hex
+from rgb_i_hex import hex_na_rgb, rgb_na_hex
+h = input('Podaj kolor hex: ')
+hex_na_rgb(h)
+print(hex_na_rgb(h))
+print('Podaj kolor rgb (po kolei): ')
+r = int(input('r: '))
+g = int(input('g: '))
+b = int(input('b: '))
+rgb_na_hex(r, g, b)
+print(rgb_na_hex(r, g, b))
+

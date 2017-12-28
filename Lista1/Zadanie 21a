@@ -1,0 +1,12 @@
+import turtle
+
+length = eval(input("Podaj długość boku: "))
+n_sides = 3 #3 - 3 boki
+
+turtle.speed(20)
+
+for i in range(n_sides):
+    turtle.forward(length)
+    turtle.right(120) #kąt 120stopni
+
+turtle.mainloop() # nie zamykaj okna po narysowaniu

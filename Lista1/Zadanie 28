@@ -1,0 +1,15 @@
+import math
+from math import pi
+
+while True:
+    try:
+        srednica=float(input("Podaj średnicę okręgu: "))
+        r=srednica/2
+        obwod=2*pi*r
+        print("Obwód jest równy ", obwod)
+        pole=pi*(r*r)
+        print("Pole koła jest równe ", pole)
+        break
+    except ValueError:
+        print("Nie podałeś liczby.")
+

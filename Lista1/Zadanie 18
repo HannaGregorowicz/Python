@@ -1,0 +1,10 @@
+i = 0
+
+# drukujemy wszystkie liczby parzyste mniejsze od 10
+while i < 10:
+    i += 1  # zwiększ i o jeden
+    if i % 2: #reszta z dzielenia != 0 -> True
+        continue # pomiń liczby nieparzyste
+    else:
+        print(i) # drukuj liczby parzyste
+

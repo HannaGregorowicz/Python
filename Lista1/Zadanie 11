@@ -1,0 +1,10 @@
+import math
+
+x= range(0,100,3)
+print(x)
+lista = list(x)
+del lista[5:100:3]  #usuwa od 5 elementu do 100 z krokiem co 3
+print(lista)
+y=len(lista)    #długość listy
+z= math.fsum(lista)/y   #sumuje elementy listy i dzieli przez długość
+print(z)

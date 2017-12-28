@@ -1,0 +1,15 @@
+import string
+import random
+
+n=int(input("Podaj liczbę znaków: "))
+
+def generate_password(n):
+    liczby=tuple(string.digits)
+    litery=tuple(string.ascii_letters)
+    litery_i_liczby=tuple(liczby+litery)
+
+    for element in range(n):
+        print(random.choice(litery_i_liczby), end ="")
+
+
+generate_password(n)

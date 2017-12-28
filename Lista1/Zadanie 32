@@ -1,0 +1,28 @@
+import math
+from math import sqrt, cos, sin, pi, asin, atan, acos
+
+konwersja=int(input("Powiedz jaką konwersję chcesz wykonać: \n1. Z kartezjańskiego do sferycznego \n2. Ze sferycznego do kartezjańskiego\n"))
+
+if(konwersja==1):
+    try:
+        x=float(input("Podaj współrzędną x: "))
+        y=float(input("Podaj współrzędną y: "))
+        z=float(input("Podaj współrzędną z: "))
+    except ValueError:
+        print("Wpisałeś złe współrzędne.")
+    r = sqrt((x ** 2) + (y ** 2) + (z ** 2))
+    kat1 = atan(y / x)*(180/pi)
+    kat2 = acos(z / r)*(180/pi)
+    print("Twoje współrzędne sferyczne to:", r, kat1, kat2)
+
+if (konwersja==2):
+    try:
+        r=float(input("Podaj promień: "))
+        dlugosc=float(input("Podaj długość sferyczną: "))
+        szerokosc=float(input("Podaj szerokość sferyczną: "))
+    except ValueError:
+        print("Wpisałeś złe współrzędne.")
+    a=r*sin(szerokosc/180*pi)*cos(dlugosc/180*pi)
+    b=r*sin(szerokosc/180*pi)*sin(dlugosc/180*pi)
+    c=r*cos(szerokosc/180*pi)
+    print("Twoje współrzędne to:", a, b, c)

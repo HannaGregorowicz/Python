@@ -1,0 +1,15 @@
+x=('a','b','c','d')
+print (x)
+
+print(''.join(x))
+print(' '.join(x))
+print (', '.join(x))
+
+"""lista=['0']*100
+print(lista)
+a=tuple(lista)
+print(a)"""
+
+
+print('    '.join(tuple(list(['0']*100))))
+

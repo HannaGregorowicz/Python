@@ -1,0 +1,9 @@
+spolgloski = ['b','c','ć','d','f','g','h','j','k','l','ł','m','n','ń','p','q','r','s','ś','t','v','w','x','z','ź','ż']
+samogloski = ['a','ą','e','ę','i','o','ó','u','y']
+
+a=input("Podaj literę: ")
+
+if a in spolgloski:
+    print("Jest to spółgłoska.")
+else:
+    print("Jest to samogłoska.")

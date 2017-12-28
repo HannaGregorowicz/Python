@@ -1,0 +1,11 @@
+x = int(input("Podaj pierwszą liczbę: "))
+y = int(input("Podaj drugą liczbę: "))
+
+
+def mnozenie(a, b):
+    c=0
+    for i in range(b):
+        c+=a
+    return c
+
+print (mnozenie(x, y))

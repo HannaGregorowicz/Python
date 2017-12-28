@@ -1,0 +1,21 @@
+import random
+y= random.randint(0,100)
+
+x=int(input("Wpisz dowolna liczbe, by zaczac gre :-)\n"))
+
+while x!=y:
+    x = int(input("Zgadnij liczbe z przedzialu 0-100 \n"))
+    if (x>y and x-y>50):
+        print ("Duzo mniejsza")
+    if (x>y and x-y>10 and x-y<=50):
+        print ("Troche mniejsza")
+    if (x>y and x-y>0 and x-y<=10):
+        print ("Mniejsza")
+    if (x<y and y-x>0 and y-x<=10):
+        print("Wieksza")
+    if (x<y and y-x>10 and y-x<=50):
+        print ("Troche wieksza")
+    if (x<y and y-x>50):
+        print ("Duzo wieksza")
+
+print("Gratulacje! Udalo Ci sie! :-)")

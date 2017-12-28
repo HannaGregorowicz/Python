@@ -1,0 +1,7 @@
+import compress
+
+print(compress.compress("AAABBBBCAAAaaDD"))
+
+print(compress.decompress("A3B4C1A3a2D2"))
+
+compress.test(3)

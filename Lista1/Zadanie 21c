@@ -1,0 +1,12 @@
+import turtle
+
+length = eval(input("Podaj długość boku: "))
+n_sides = eval(input("Podaj liczbę boków: "))
+
+turtle.speed(20)
+
+for i in range(n_sides):
+    turtle.forward(length)
+    turtle.right(360/n_sides)
+
+turtle.mainloop() # nie zamykaj okna po narysowaniu
