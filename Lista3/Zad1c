@@ -1,0 +1,27 @@
+import celsjusz
+
+stary_plik = open("celsjusz.txt", 'r')
+
+temp = stary_plik.read()
+
+stary_plik.close()
+
+tempwfar = []
+
+temp=list(temp.split(' '))
+temp.remove(temp[-1])
+
+for a in temp:
+    a=int(a)
+    x=celsjusz.celtofar(a)
+    tempwfar.append(x)
+
+nowatemp = ''
+
+for a in tempwfar:
+    nowatemp += (str(a) + ' ')
+
+
+nowyplik = open("fahrenheit.txt", 'w')
+nowyplik.write(nowatemp)
+nowyplik.close()

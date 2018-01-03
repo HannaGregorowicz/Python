@@ -1,0 +1,8 @@
+import modul
+import modul1
+
+x = modul.listy()
+dzieci = x[0]
+ciastka = x[1]
+
+modul1.test(dzieci,ciastka)

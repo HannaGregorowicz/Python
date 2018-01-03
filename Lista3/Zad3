@@ -1,0 +1,13 @@
+plik1 = open("studenci_cpp.txt", 'r')
+plik2 = open("studenci_python.txt", 'r')
+
+python = plik2.read().split("\n")
+cpp = plik1.read().split("\n")
+
+plik1.close()
+plik2.close()
+
+def intersect(a, b):
+    return list(set(a) & set(b))
+
+print(intersect(python,cpp))

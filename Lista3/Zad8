@@ -1,0 +1,79 @@
+import random
+import os
+
+lista = [' ',' ',' ',' ',' ',' ',' ',' ',' ']
+lista_pomocnicza = [0,0,0,0,0,0,0,0,0]          #lista sprawdzająca czy pola są zajęte (wartości 0-1)
+
+def rysuj():            #rysuje planszę
+    print(lista[0], '|', lista[1], '|', lista[2])
+    print("---------")
+    print(lista[3], '|', lista[4], '|', lista[5])
+    print("---------")
+    print(lista[6], '|', lista[7], '|', lista[8])
+
+def ruch_gracza():
+    x=int(input("Podaj numer pola, w które chcesz wstawić kółko: "))
+    lista[x-1] = 'O'            #wstawia kółko
+    lista_pomocnicza[x-1] = 1           #wstawia 1 w liczbę pomocniczą - to oznacza że dane pole jest zajęte
+
+def ruch_komputera():
+    while True:         #ta pętla losuje tak długo aż nie znajdzie wolnego miejsca
+        x = random.randint(0,8)
+        if lista_pomocnicza[x]==0:      #znajduje wolne miejsce
+            lista[x] = "X"              #wpisuje X
+            lista_pomocnicza[x]=1       #zmienia miejsce na zajęcie
+            break
+        else:
+            break
+
+def sprawdzenie():
+    if (lista[0] == "O" and lista[1] == "O" and lista[2] == "O"):
+        return 1
+    if (lista[3] == "O" and lista[4] == "O" and lista[5] == "O"):
+        return 1
+    if (lista[6] == "O" and lista[7] == "O" and lista[8] == "O"):
+        return 1
+    if (lista[0] == "O" and lista[3] == "O" and lista[6] == "O"):
+        return 1
+    if (lista[1] == "O" and lista[4] == "O" and lista[7] == "O"):
+        return 1
+    if (lista[2] == "O" and lista[5] == "O" and lista[8] == "O"):
+        return 1
+    if (lista[0] == "O" and lista[4] == "O" and lista[8] == "O"):
+        return 1
+    if (lista[2] == "O" and lista[4] == "O" and lista[6] == "O"):
+        return 1
+
+    if (lista[0] == "X" and lista[1] == "X" and lista[2] == "X"):
+        return 2
+    if (lista[3] == "X" and lista[4] == "X" and lista[5] == "X"):
+        return 2
+    if (lista[6] == "X" and lista[7] == "X" and lista[8] == "X"):
+        return 2
+    if (lista[0] == "X" and lista[3] == "X" and lista[6] == "X"):
+        return 2
+    if (lista[1] == "X" and lista[4] == "X" and lista[7] == "X"):
+        return 2
+    if (lista[2] == "X" and lista[5] == "X" and lista[8] == "X"):
+        return 2
+    if (lista[0] == "X" and lista[4] == "X" and lista[8] == "X"):
+        return 2
+    if (lista[2] == "X" and lista[4] == "X" and lista[6] == "X"):
+        return 2
+
+    else:
+        return 0
+
+
+while (sprawdzenie()!= 1 and sprawdzenie() != 2) and 0 in lista_pomocnicza:
+    rysuj()
+    ruch_gracza()
+    rysuj()
+    ruch_komputera()
+    rysuj()
+    if sprawdzenie()==1:
+        print("Wygrałeś!")
+    if sprawdzenie()==2:
+        print("Przegrałeś :(")
+    if sprawdzenie()!=1 and sprawdzenie()!=2 and 0 not in lista_pomocnicza:
+        print("Remis")

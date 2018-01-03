@@ -1,0 +1,16 @@
+import itertools
+
+n = input('Podaj wyraz ciągu: ')
+
+for i in range(int(n)):
+    if i == 0:
+        wyraz = str(i + 1)                              #Pierwszy wyraz równy 1
+    if i > 0:
+        lista = []
+        for k, g in itertools.groupby(wyraz):           #Grupowanie
+            lista.insert(0, list(g))
+            wyraz = ''
+        for g in lista:
+            wyraz = "%u%s" % (len(g), g[0]) + wyraz
+
+    print(i + 1, '->', wyraz)

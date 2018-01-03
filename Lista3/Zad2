@@ -1,0 +1,24 @@
+import sys
+if len(sys.argv)<2:                 #Jezeli nie zostanie podany parametr wymagany
+    print("Podaj nazwę pliku!")
+else:
+    filename=sys.argv[1]
+    numerlinii=0
+    plik=open(filename+'.txt')
+    if (len(sys.argv)==3):          #Jezeli nie zostanie podany parametr dodatkowy
+        tryb=eval(sys.argv[2])
+    else:
+        tryb=0
+    linie=plik.readlines()
+    if (tryb==0):
+        for line in linie:
+            print(str(line))
+    elif (tryb==1):
+        for line in linie:
+            if (line[0]!='#'):      #Jezeli nie zaczyna sie od hasza
+                print(line)
+    elif (tryb==2):
+        for line in linie:          #Numerowanie
+            numerlinii+=1
+            print(str(numerlinii)+'. '+str(line))
+    plik.close()

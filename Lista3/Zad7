@@ -1,0 +1,102 @@
+import matplotlib.pyplot as plt
+
+miesiac1 = int(input("Podaj miesiąc początkowy: "))
+rok1 = int(input("Podaj rok początkowy: "))
+
+miesiac2 = int(input("Podaj miesiąc końcowy: "))
+rok2 = int(input("Podaj rok końcowy: "))
+wysokosc = float(input("Podaj wysokość początkową [m]: "))
+
+
+do_wykresu = []
+
+plik = open("drzewo.txt", 'w+')
+
+
+def pisanie():                      #tak naprawdę pisanie + zbieranie danych do wykresu
+    plik.write(str(wysokosc))
+    plik.write("\n")
+    do_wykresu.append(wysokosc)
+
+print(wysokosc)
+pisanie()
+
+if rok1 == rok2:
+    x = list(range(miesiac1, miesiac2+1))
+    if 3 in x or 4 in x or 5 in x:
+        wysokosc *= 2
+        print(wysokosc)
+        pisanie()
+    if 6 in x or 7 in x or 8 in x:
+        wysokosc +=1
+        print(wysokosc)
+        pisanie()
+
+
+if rok1 == rok2-1:
+    x = list(range(miesiac1, 13))
+
+    if 3 in x or 4 in x or 5 in x:
+        wysokosc *= 2
+        print(wysokosc)
+        pisanie()
+    if 6 in x or 7 in x or 8 in x:
+        wysokosc +=1
+        print(wysokosc)
+        pisanie()
+
+    y = list(range(1,miesiac2+1))
+
+    if 3 in y or 4 in y or 5 in y:
+        wysokosc *= 2
+        print(wysokosc)
+        pisanie()
+    if 6 in y or 7 in y or 8 in y:
+        wysokosc +=1
+        print(wysokosc)
+        pisanie()
+
+else:
+    cale_lata = rok2 - rok1 - 1
+    latka = list(range(1, cale_lata+1))
+
+    x = list(range(miesiac1, 13))
+
+    if 3 in x or 4 in x or 5 in x:
+        wysokosc *= 2
+        print(wysokosc)
+        pisanie()
+    if 6 in x or 7 in x or 8 in x:
+        wysokosc += 1
+        print(wysokosc)
+        pisanie()
+
+    for a in latka:
+        wysokosc*=2
+        print(wysokosc)
+        pisanie()
+        wysokosc+=1
+        print(wysokosc)
+        pisanie()
+
+    y = list(range(1, miesiac2 + 1))
+
+    if 3 in y or 4 in y or 5 in y:
+        wysokosc *= 2
+        print(wysokosc)
+        pisanie()
+    if 6 in y or 7 in y or 8 in y:
+        wysokosc += 1
+        print(wysokosc)
+        pisanie()
+
+
+print("Wysokość końcowa jest równa", wysokosc)
+plik.write("Wysokość końcowa jest równa ")
+plik.write(str(wysokosc))
+
+plt.plot(do_wykresu)
+plt.ylabel('Wysokość')
+plt.show()
+
+plik.close()

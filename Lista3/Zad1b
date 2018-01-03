@@ -1,0 +1,21 @@
+import sys
+from sys import argv
+import celsjusz
+
+try:
+    n = int(sys.argv[1])
+except ValueError:
+    print("To nie jest liczba całkowita.")
+
+
+x = celsjusz.gentemp(n)
+
+temp = ''
+
+for a in x:
+    temp += (str(a) + ' ')
+
+
+plik = open("celsjusz.txt", 'w')
+plik.write(temp)
+plik.close()

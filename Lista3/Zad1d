@@ -1,0 +1,25 @@
+import celsjusz
+
+plik1 = open("celsjusz.txt", 'r')
+plik2 = open("fahrenheit.txt", 'r')
+
+tcel = plik1.read()
+tfar = plik2.read()
+
+plik1.close()
+plik2.close()
+
+tcel = list(tcel.split(' '))
+tcel.remove(tcel[-1])
+tfar = list(tfar.split(' '))
+tfar.remove(tfar[-1])
+
+heh = 0
+
+for a in tcel:
+    x = celsjusz.celtofar(float(a))
+    if x == float(tfar[heh]):
+        print("true")
+    else:
+        print("nie")
+    heh+=1

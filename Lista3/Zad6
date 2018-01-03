@@ -1,0 +1,36 @@
+import sys
+
+kolumny=int(sys.argv[1])
+rzedy=int(sys.argv[2])
+tekst=sys.argv[3]
+
+tekst=open(tekst)
+tekst=tekst.readlines()         #odczytuje tekst
+tekst="".join(tekst).split()    #tworzy listę z wyrazów
+
+druk=[]                         #to co będzie wyświetlane
+licznik=0                       #licznik wyrazów - jak jest większy to wraca do zera
+licznikmiejsca=0                #ile ZAJĘTEGO miejsca w rzędzie
+licznikogolny=0                 #ile razy można zapisać tekst
+
+
+for x in range(0,rzedy):        #dla każdego wiersza
+    while(kolumny-licznikmiejsca>=len(tekst[licznik])):         #dopóki miejsca jest więcej niż długość wyrazu
+        druk.append(tekst[licznik])                             #do drukowanej później listy dodaje się ten wyraz
+        licznikmiejsca+=len(tekst[licznik])                     #licznik zajętego miejsca zwiększa się o długość wyrazu
+        licznik+=1                                              #przejście do następnego wyrazu
+        if licznik==len(tekst):             #jeśli licznik jest równy liczbie wyrazów
+            licznikogolny+=1                #ogólny licznik zwiększa się o 1
+        licznik=licznik%(len(tekst))        #reszta z dzielenia licznika przez liczbę wyrazów
+        if (kolumny-licznikmiejsca>=len(tekst[licznik%len(tekst)])+1):          #Tutaj ogólnie mówiąc, jeśli jest jeszcze miejsce na kolejny
+            druk.append(" ")                                                    #wyraz to jest wstawiana spacja
+            licznikmiejsca+=1
+        else:
+            for y in range(0,kolumny-licznikmiejsca):                           #a jeśli nie to pozostałe miejsca w wierszu są zapełniane
+                druk.append("*")                                                #gwiazdkami.
+            break
+    print("".join(druk))
+    druk=[]
+    licznikmiejsca=0
+
+print(licznikogolny)
